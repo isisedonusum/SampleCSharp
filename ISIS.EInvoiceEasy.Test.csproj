@@ -64,6 +64,9 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ChilkatDotNet2">
+      <HintPath>lib\ChilkatDotNet2.dll</HintPath>
+    </Reference>
     <Reference Include="ICSharpCode.SharpZipLib">
       <HintPath>lib\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
