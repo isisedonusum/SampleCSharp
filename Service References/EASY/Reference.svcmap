@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b46e3b8a-2253-4eac-a6b1-538e970ccf5b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://erptestep.isisbilisim.com.tr/EInvoiceEasy.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="EInvoiceEasy.xsd" MetadataType="Schema" ID="d22863e8-b006-4fb3-84e5-820f6b5d28e7" SourceId="1" SourceUrl="http://erptestep.isisbilisim.com.tr/EInvoiceEasy.svc?xsd=xsd4" />
+    <MetadataFile FileName="EInvoiceEasy.disco" MetadataType="Disco" ID="7141611e-3c9a-46fa-b63d-400d8acf98ee" SourceId="1" SourceUrl="http://erptestep.isisbilisim.com.tr/EInvoiceEasy.svc?disco" />
+    <MetadataFile FileName="EInvoiceEasy1.xsd" MetadataType="Schema" ID="00888c32-3091-45a0-bb35-2d8145318971" SourceId="1" SourceUrl="http://erptestep.isisbilisim.com.tr/EInvoiceEasy.svc?xsd=xsd0" />
+    <MetadataFile FileName="EInvoiceEasy2.xsd" MetadataType="Schema" ID="c328a56d-c87f-47f6-bad4-7f3c27d83cd9" SourceId="1" SourceUrl="http://erptestep.isisbilisim.com.tr/EInvoiceEasy.svc?xsd=xsd1" />
+    <MetadataFile FileName="EInvoiceEasy3.xsd" MetadataType="Schema" ID="d6a191cc-73a4-4497-800a-894a2ecad30b" SourceId="1" SourceUrl="http://erptestep.isisbilisim.com.tr/EInvoiceEasy.svc?xsd=xsd2" />
+    <MetadataFile FileName="EInvoiceEasy4.xsd" MetadataType="Schema" ID="dbc94442-f48f-455b-88dd-962c2bcf5c5c" SourceId="1" SourceUrl="http://erptestep.isisbilisim.com.tr/EInvoiceEasy.svc?xsd=xsd3" />
+    <MetadataFile FileName="EInvoiceEasy.wsdl" MetadataType="Wsdl" ID="70961006-d349-4deb-91d9-9342196c6d9c" SourceId="1" SourceUrl="http://erptestep.isisbilisim.com.tr/EInvoiceEasy.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Easy.wsdl" MetadataType="Wsdl" ID="fa5d8cda-c3df-4d93-b9de-a2e66260ed68" SourceId="1" SourceUrl="http://erptestep.isisbilisim.com.tr/EInvoiceEasy.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
