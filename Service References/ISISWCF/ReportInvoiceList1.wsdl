@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://isisbilisim.com.tr/services/einvoice" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://tempuri.org/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ReportInvoiceList" targetNamespace="http://isisbilisim.com.tr/services/einvoice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://tempuri.org/" location="http://musteritestws.isisbilisim.com.tr/Services/einvoice/ReportInvoiceList.svc?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://isisbilisim.com.tr/services/einvoice/Imports">
+      <xsd:import schemaLocation="http://musteritestws.isisbilisim.com.tr/Services/einvoice/ReportInvoiceList.svc?xsd=xsd0" namespace="http://isisbilisim.com.tr/services/einvoice" />
+      <xsd:import schemaLocation="http://musteritestws.isisbilisim.com.tr/Services/einvoice/ReportInvoiceList.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://musteritestws.isisbilisim.com.tr/Services/einvoice/ReportInvoiceList.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://musteritestws.isisbilisim.com.tr/Services/einvoice/ReportInvoiceList.svc?xsd=xsd3" namespace="http://isisbilisim.com.tr/data/einvoice" />
+      <xsd:import schemaLocation="http://musteritestws.isisbilisim.com.tr/Services/einvoice/ReportInvoiceList.svc?xsd=xsd4" namespace="http://isisbilisim.com.tr/services" />
+      <xsd:import schemaLocation="http://musteritestws.isisbilisim.com.tr/Services/einvoice/ReportInvoiceList.svc?xsd=xsd5" namespace="http://isisbilisim.com.tr/enums/core" />
+      <xsd:import schemaLocation="http://musteritestws.isisbilisim.com.tr/Services/einvoice/ReportInvoiceList.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/ISIS.Einvoice.Framework.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IReportInvoiceList_OutboundInvoiceListByFilter_InputMessage">
+    <wsdl:part name="parameters" element="tns:OutboundInvoiceListByFilter" />
+  </wsdl:message>
+  <wsdl:message name="IReportInvoiceList_OutboundInvoiceListByFilter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OutboundInvoiceListByFilterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReportInvoiceList_SetOutboundInvoiceAsUblDownload_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetOutboundInvoiceAsUblDownload" />
+  </wsdl:message>
+  <wsdl:message name="IReportInvoiceList_SetOutboundInvoiceAsUblDownload_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetOutboundInvoiceAsUblDownloadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReportInvoiceList_SetOutboundInvoiceAsReaded_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetOutboundInvoiceAsReaded" />
+  </wsdl:message>
+  <wsdl:message name="IReportInvoiceList_SetOutboundInvoiceAsReaded_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetOutboundInvoiceAsReadedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReportInvoiceList_InboundInvoiceListByFilter_InputMessage">
+    <wsdl:part name="parameters" element="tns:InboundInvoiceListByFilter" />
+  </wsdl:message>
+  <wsdl:message name="IReportInvoiceList_InboundInvoiceListByFilter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InboundInvoiceListByFilterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReportInvoiceList_SetInboundInvoiceAsIsisTrDownload_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetInboundInvoiceAsIsisTrDownload" />
+  </wsdl:message>
+  <wsdl:message name="IReportInvoiceList_SetInboundInvoiceAsIsisTrDownload_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetInboundInvoiceAsIsisTrDownloadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReportInvoiceList_SetInboundInvoiceAsUblDownload_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetInboundInvoiceAsUblDownload" />
+  </wsdl:message>
+  <wsdl:message name="IReportInvoiceList_SetInboundInvoiceAsUblDownload_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetInboundInvoiceAsUblDownloadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReportInvoiceList_SetInboundInvoiceAsReaded_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetInboundInvoiceAsReaded" />
+  </wsdl:message>
+  <wsdl:message name="IReportInvoiceList_SetInboundInvoiceAsReaded_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetInboundInvoiceAsReadedResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IReportInvoiceList">
+    <wsdl:operation name="OutboundInvoiceListByFilter">
+      <wsdl:input wsaw:Action="http://isisbilisim.com.tr/services/einvoice/IReportInvoiceList/OutboundInvoiceListByFilter" message="tns:IReportInvoiceList_OutboundInvoiceListByFilter_InputMessage" />
+      <wsdl:output wsaw:Action="http://isisbilisim.com.tr/services/einvoice/IReportInvoiceList/OutboundInvoiceListByFilterResponse" message="tns:IReportInvoiceList_OutboundInvoiceListByFilter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetOutboundInvoiceAsUblDownload">
+      <wsdl:input wsaw:Action="http://isisbilisim.com.tr/services/einvoice/IReportInvoiceList/SetOutboundInvoiceAsUblDownload" message="tns:IReportInvoiceList_SetOutboundInvoiceAsUblDownload_InputMessage" />
+      <wsdl:output wsaw:Action="http://isisbilisim.com.tr/services/einvoice/IReportInvoiceList/SetOutboundInvoiceAsUblDownloadResponse" message="tns:IReportInvoiceList_SetOutboundInvoiceAsUblDownload_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetOutboundInvoiceAsReaded">
+      <wsdl:input wsaw:Action="http://isisbilisim.com.tr/services/einvoice/IReportInvoiceList/SetOutboundInvoiceAsReaded" message="tns:IReportInvoiceList_SetOutboundInvoiceAsReaded_InputMessage" />
+      <wsdl:output wsaw:Action="http://isisbilisim.com.tr/services/einvoice/IReportInvoiceList/SetOutboundInvoiceAsReadedResponse" message="tns:IReportInvoiceList_SetOutboundInvoiceAsReaded_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InboundInvoiceListByFilter">
+      <wsdl:input wsaw:Action="http://isisbilisim.com.tr/services/einvoice/IReportInvoiceList/InboundInvoiceListByFilter" message="tns:IReportInvoiceList_InboundInvoiceListByFilter_InputMessage" />
+      <wsdl:output wsaw:Action="http://isisbilisim.com.tr/services/einvoice/IReportInvoiceList/InboundInvoiceListByFilterResponse" message="tns:IReportInvoiceList_InboundInvoiceListByFilter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetInboundInvoiceAsIsisTrDownload">
+      <wsdl:input wsaw:Action="http://isisbilisim.com.tr/services/einvoice/IReportInvoiceList/SetInboundInvoiceAsIsisTrDownload" message="tns:IReportInvoiceList_SetInboundInvoiceAsIsisTrDownload_InputMessage" />
+      <wsdl:output wsaw:Action="http://isisbilisim.com.tr/services/einvoice/IReportInvoiceList/SetInboundInvoiceAsIsisTrDownloadResponse" message="tns:IReportInvoiceList_SetInboundInvoiceAsIsisTrDownload_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetInboundInvoiceAsUblDownload">
+      <wsdl:input wsaw:Action="http://isisbilisim.com.tr/services/einvoice/IReportInvoiceList/SetInboundInvoiceAsUblDownload" message="tns:IReportInvoiceList_SetInboundInvoiceAsUblDownload_InputMessage" />
+      <wsdl:output wsaw:Action="http://isisbilisim.com.tr/services/einvoice/IReportInvoiceList/SetInboundInvoiceAsUblDownloadResponse" message="tns:IReportInvoiceList_SetInboundInvoiceAsUblDownload_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetInboundInvoiceAsReaded">
+      <wsdl:input wsaw:Action="http://isisbilisim.com.tr/services/einvoice/IReportInvoiceList/SetInboundInvoiceAsReaded" message="tns:IReportInvoiceList_SetInboundInvoiceAsReaded_InputMessage" />
+      <wsdl:output wsaw:Action="http://isisbilisim.com.tr/services/einvoice/IReportInvoiceList/SetInboundInvoiceAsReadedResponse" message="tns:IReportInvoiceList_SetInboundInvoiceAsReaded_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="ReportInvoiceList">
+    <wsdl:port name="BasicHttpBinding_IReportInvoiceList" binding="i0:BasicHttpBinding_IReportInvoiceList">
+      <soap:address location="http://musteritestws.isisbilisim.com.tr/Services/einvoice/ReportInvoiceList.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

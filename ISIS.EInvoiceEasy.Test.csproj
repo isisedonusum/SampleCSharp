@@ -107,6 +107,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\ISISWCF\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Vars.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -150,6 +155,35 @@
     <None Include="Service References\EASY\ISIS.EInvoiceEasy.Test.EASY.ContractsResponseType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ISISWCF\ISIS.EInvoiceEasy.Test.ISISWCF.InboxInvoiceHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ISISWCF\ISIS.EInvoiceEasy.Test.ISISWCF.OutboxInvoiceHeader.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ISISWCF\ReportInvoiceList.wsdl" />
+    <None Include="Service References\ISISWCF\ReportInvoiceList.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ISISWCF\ReportInvoiceList1.wsdl" />
+    <None Include="Service References\ISISWCF\ReportInvoiceList1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ISISWCF\ReportInvoiceList2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ISISWCF\ReportInvoiceList3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ISISWCF\ReportInvoiceList4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ISISWCF\ReportInvoiceList5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ISISWCF\ReportInvoiceList6.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0">
@@ -178,6 +212,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\EASY\" />
+    <WCFMetadataStorage Include="Service References\ISISWCF\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\EASY\EInvoiceEasy.disco" />
@@ -190,6 +225,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\EASY\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ISISWCF\ReportInvoiceList.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ISISWCF\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ISISWCF\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ISISWCF\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

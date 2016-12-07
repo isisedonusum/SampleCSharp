@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://isisbilisim.com.tr/services/einvoice" elementFormDefault="qualified" targetNamespace="http://isisbilisim.com.tr/services/einvoice" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://musteritestws.isisbilisim.com.tr/Services/einvoice/ReportInvoiceList.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://musteritestws.isisbilisim.com.tr/Services/einvoice/ReportInvoiceList.svc?xsd=xsd3" namespace="http://isisbilisim.com.tr/data/einvoice" />
+  <xs:import schemaLocation="http://musteritestws.isisbilisim.com.tr/Services/einvoice/ReportInvoiceList.svc?xsd=xsd4" namespace="http://isisbilisim.com.tr/services" />
+  <xs:import schemaLocation="http://musteritestws.isisbilisim.com.tr/Services/einvoice/ReportInvoiceList.svc?xsd=xsd5" namespace="http://isisbilisim.com.tr/enums/core" />
+  <xs:import schemaLocation="http://musteritestws.isisbilisim.com.tr/Services/einvoice/ReportInvoiceList.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/ISIS.Einvoice.Framework.Data" />
+  <xs:import schemaLocation="http://musteritestws.isisbilisim.com.tr/Services/einvoice/ReportInvoiceList.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:element name="OutboundInvoiceListByFilter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="tns:Contracts.OutboundInvoiceListRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Contracts.OutboundInvoiceListRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Contracts.ReportInvoiceListRequest">
+        <xs:sequence>
+          <xs:element name="Status" type="tns:Enums.OutboundStatus" />
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UUIDList" nillable="true" type="q1:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Contracts.OutboundInvoiceListRequest" nillable="true" type="tns:Contracts.OutboundInvoiceListRequest" />
+  <xs:complexType name="Contracts.ReportInvoiceListRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BeginInvoiceDate" nillable="true" type="xs:dateTime" />
+      <xs:element name="BeginRecordDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BeginUpdateDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CustomerVKN" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="EndInvoiceDate" nillable="true" type="xs:dateTime" />
+      <xs:element name="EndRecordDateTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EndUpdateDate" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q3="http://isisbilisim.com.tr/data/einvoice" minOccurs="0" name="ExcludedExtensions" nillable="true" type="q3:ArrayOfExtension" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ID" nillable="true" type="q4:ArrayOfstring" />
+      <xs:element xmlns:q5="http://isisbilisim.com.tr/data/einvoice" minOccurs="0" name="IncludedExtensions" nillable="true" type="q5:ArrayOfExtension" />
+      <xs:element xmlns:q6="http://isisbilisim.com.tr/services" name="IsReaded" type="q6:GlobalEnum.Bool" />
+      <xs:element xmlns:q7="http://isisbilisim.com.tr/services" name="IsUblDownLoaded" type="q7:GlobalEnum.Bool" />
+      <xs:element xmlns:q8="http://isisbilisim.com.tr/enums/core" minOccurs="0" name="OrderBy" type="q8:GlobalEnum.OrderByType" />
+      <xs:element name="Profile" type="tns:Enums.InvoiceType" />
+      <xs:element name="RecordCount" type="xs:int" />
+      <xs:element name="VKN" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Contracts.ReportInvoiceListRequest" nillable="true" type="tns:Contracts.ReportInvoiceListRequest" />
+  <xs:simpleType name="Enums.InvoiceType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ALL" />
+      <xs:enumeration value="COMMERCIAL" />
+      <xs:enumeration value="BASIC" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enums.InvoiceType" nillable="true" type="tns:Enums.InvoiceType" />
+  <xs:simpleType name="Enums.OutboundStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ALL" />
+      <xs:enumeration value="TEMPLATE" />
+      <xs:enumeration value="CANCELED" />
+      <xs:enumeration value="APPROVED" />
+      <xs:enumeration value="ERROR" />
+      <xs:enumeration value="COMPLATED" />
+      <xs:enumeration value="PROCESSING" />
+      <xs:enumeration value="NOTRESPONDED" />
+      <xs:enumeration value="REJECTED" />
+      <xs:enumeration value="ACCEPTED" />
+      <xs:enumeration value="COMPLATEDANDACCEPTED" />
+      <xs:enumeration value="CANCELEDORERRORORREJECTED" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enums.OutboundStatus" nillable="true" type="tns:Enums.OutboundStatus" />
+  <xs:element name="OutboundInvoiceListByFilterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ISIS.Einvoice.Framework.Data" minOccurs="0" name="OutboundInvoiceListByFilterResult" nillable="true" type="q9:ArrayOfOutboxInvoiceHeader" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetOutboundInvoiceAsUblDownload">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VKN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UUID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetOutboundInvoiceAsUblDownloadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetOutboundInvoiceAsUblDownloadResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetOutboundInvoiceAsReaded">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VKN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UUID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetOutboundInvoiceAsReadedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetOutboundInvoiceAsReadedResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InboundInvoiceListByFilter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="request" nillable="true" type="tns:Contracts.InboundInvoiceListRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Contracts.InboundInvoiceListRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:Contracts.ReportInvoiceListRequest">
+        <xs:sequence>
+          <xs:element xmlns:q10="http://isisbilisim.com.tr/services" name="IsIsisTrDownLoaded" type="q10:GlobalEnum.Bool" />
+          <xs:element xmlns:q11="http://isisbilisim.com.tr/services" name="IsProcessed" type="q11:GlobalEnum.Bool" />
+          <xs:element name="Status" type="tns:Enums.InboundStatus" />
+          <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UUIDList" nillable="true" type="q12:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Contracts.InboundInvoiceListRequest" nillable="true" type="tns:Contracts.InboundInvoiceListRequest" />
+  <xs:simpleType name="Enums.InboundStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ALL" />
+      <xs:enumeration value="PROCESSING" />
+      <xs:enumeration value="WAITING_APPROVAL" />
+      <xs:enumeration value="NOTRESPONDED">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="REJECTED">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ACCEPTED">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">10</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="COMPLATEDANDACCEPTED">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">11</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ERRORORREJECTED">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">12</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Enums.InboundStatus" nillable="true" type="tns:Enums.InboundStatus" />
+  <xs:element name="InboundInvoiceListByFilterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/ISIS.Einvoice.Framework.Data" minOccurs="0" name="InboundInvoiceListByFilterResult" nillable="true" type="q13:ArrayOfInboxInvoiceHeader" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetInboundInvoiceAsIsisTrDownload">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VKN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UUID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetInboundInvoiceAsIsisTrDownloadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetInboundInvoiceAsIsisTrDownloadResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetInboundInvoiceAsUblDownload">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VKN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UUID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetInboundInvoiceAsUblDownloadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetInboundInvoiceAsUblDownloadResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetInboundInvoiceAsReaded">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VKN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UUID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetInboundInvoiceAsReadedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetInboundInvoiceAsReadedResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

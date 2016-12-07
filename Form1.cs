@@ -4,7 +4,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.ServiceModel;
+using System.ServiceModel.Channels;
 using System.ServiceModel.Web;
 using System.Text;
 using System.Windows.Forms;
@@ -214,6 +216,99 @@ namespace ISIS.EInvoiceEasy.Test
                 richMessage.Text = ex.Message;
             }
 
+        }
+
+        private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            Brush _textBrush;
+
+            // Get the item from the collection.
+            TabPage _tabPage = tabControl1.TabPages[e.Index];
+
+            // Get the real bounds for the tab rectangle.
+            Rectangle _tabBounds = tabControl1.GetTabRect(e.Index);
+
+            if (e.State == DrawItemState.Selected)
+            {
+
+                // Draw a different background color, and don't paint a focus rectangle.
+                _textBrush = new SolidBrush(Color.White);
+                g.FillRectangle(Brushes.Gray, e.Bounds);
+            }
+            else
+            {
+                _textBrush = new System.Drawing.SolidBrush(e.ForeColor);
+                e.DrawBackground();
+            }
+
+            // Use our own font.
+            Font _tabFont = new Font("Arial", (float)10.0, FontStyle.Bold, GraphicsUnit.Pixel);
+
+            // Draw string. Center the text.
+            StringFormat _stringFlags = new StringFormat();
+            _stringFlags.Alignment = StringAlignment.Center;
+            _stringFlags.LineAlignment = StringAlignment.Center;
+            g.DrawString(_tabPage.Text, _tabFont, _textBrush, _tabBounds, new StringFormat(_stringFlags));
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+            EndpointAddress ea = new EndpointAddress(new Uri(txtURL.Text));
+            CustomBinding cb = new CustomBinding();
+            
+            TextMessageEncodingBindingElement textMessageEncoding = new TextMessageEncodingBindingElement()
+            {
+                MessageVersion = MessageVersion.Soap11
+            };
+            cb.Elements.Add(textMessageEncoding);
+
+            //HTTPS kontrolü
+            HttpTransportBindingElement transport = null;
+            if (txtURL.Text.Length > 5 && txtURL.Text.Substring(0, 5).ToLower() == "https")
+                transport = new HttpsTransportBindingElement();
+            else
+                transport = new HttpTransportBindingElement();
+
+            transport.UseDefaultWebProxy = true;
+            transport.BypassProxyOnLocal = true;
+
+            if (!String.IsNullOrEmpty(txtPassword.Text))
+                transport.AuthenticationScheme = AuthenticationSchemes.Basic;
+
+            transport.MaxReceivedMessageSize = int.MaxValue;
+
+            cb.Elements.Add(transport);
+
+            ISISWCF.ReportInvoiceListClient client = new ISISWCF.ReportInvoiceListClient(cb, ea);
+            if (!String.IsNullOrEmpty(txtPassword.Text))
+            {
+                client.ClientCredentials.UserName.UserName = txtUserName.Text;
+                client.ClientCredentials.UserName.Password = txtPassword.Text;
+            }
+
+            var request = new ISISWCF.ContractsOutboundInvoiceListRequest();
+            request.VKN = txtVKN.Text;
+            request.RecordCount = 100;
+            request.BeginRecordDateTime = DateTime.Now.AddDays(-30);
+            request.EndRecordDateTime = DateTime.Now;
+
+            // This wrapper is required for each call
+            using (OperationContextScope scope = new OperationContextScope(client.InnerChannel))
+            {
+                var httpRequestProperty = new HttpRequestMessageProperty();
+                httpRequestProperty.Headers[System.Net.HttpRequestHeader.Authorization] = "Basic " +
+                Convert.ToBase64String(Encoding.ASCII.GetBytes(client.ClientCredentials.UserName.UserName + ":" + client.ClientCredentials.UserName.Password));
+                OperationContext.Current.OutgoingMessageProperties[HttpRequestMessageProperty.Name] = httpRequestProperty;
+
+                var result = client.OutboundInvoiceListByFilter(request);
+                textBox1.Text = String.Format("{0} adet fatura bulundu.\r\n", result.Count);
+                foreach (var invoice in result)
+                {
+                    textBox1.Text += String.Format("{0}\r\n", invoice.ID);
+                }
+            }
         }
     }
 }

@@ -63,6 +63,11 @@
             this.richOutbound = new System.Windows.Forms.RichTextBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.richMessage = new System.Windows.Forms.RichTextBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtURL = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -71,22 +76,32 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
+            this.tabControl1.Alignment = System.Windows.Forms.TabAlignment.Left;
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.tabControl1.ItemSize = new System.Drawing.Size(25, 150);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1008, 572);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl1_DrawItem);
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label9);
+            this.tabPage1.Controls.Add(this.txtURL);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.txtVKN);
             this.tabPage1.Controls.Add(this.label3);
@@ -95,10 +110,10 @@
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.txtPassword);
             this.tabPage1.Controls.Add(this.txtUserName);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(154, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1000, 546);
+            this.tabPage1.Size = new System.Drawing.Size(850, 564);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "ServiceCredentials";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -191,10 +206,10 @@
             this.tabPage2.Controls.Add(this.btnGetSingleEnvelope);
             this.tabPage2.Controls.Add(this.btnGetSingleInvoice);
             this.tabPage2.Controls.Add(this.richInBound);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(154, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1000, 546);
+            this.tabPage2.Size = new System.Drawing.Size(850, 564);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "InboundActions";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -335,9 +350,9 @@
             // richInBound
             // 
             this.richInBound.Dock = System.Windows.Forms.DockStyle.Right;
-            this.richInBound.Location = new System.Drawing.Point(233, 3);
+            this.richInBound.Location = new System.Drawing.Point(162, 3);
             this.richInBound.Name = "richInBound";
-            this.richInBound.Size = new System.Drawing.Size(764, 540);
+            this.richInBound.Size = new System.Drawing.Size(685, 558);
             this.richInBound.TabIndex = 0;
             this.richInBound.Text = "";
             // 
@@ -349,10 +364,10 @@
             this.tabPage3.Controls.Add(this.btnSendInvoice);
             this.tabPage3.Controls.Add(this.btnSendEnvelope);
             this.tabPage3.Controls.Add(this.richOutbound);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(154, 4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1000, 546);
+            this.tabPage3.Size = new System.Drawing.Size(850, 564);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Outbound Actions";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -406,9 +421,9 @@
             // richOutbound
             // 
             this.richOutbound.Dock = System.Windows.Forms.DockStyle.Right;
-            this.richOutbound.Location = new System.Drawing.Point(233, 3);
+            this.richOutbound.Location = new System.Drawing.Point(169, 3);
             this.richOutbound.Name = "richOutbound";
-            this.richOutbound.Size = new System.Drawing.Size(764, 540);
+            this.richOutbound.Size = new System.Drawing.Size(678, 558);
             this.richOutbound.TabIndex = 1;
             this.richOutbound.Text = "";
             // 
@@ -439,6 +454,54 @@
             this.richMessage.TabIndex = 0;
             this.richMessage.Text = "";
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.textBox1);
+            this.tabPage4.Controls.Add(this.button1);
+            this.tabPage4.Location = new System.Drawing.Point(154, 4);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(850, 564);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "OutboundInvoiceList";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(381, 30);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Get List";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.textBox1.Location = new System.Drawing.Point(3, 83);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(844, 478);
+            this.textBox1.TabIndex = 1;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(374, 129);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(29, 13);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "URL";
+            // 
+            // txtURL
+            // 
+            this.txtURL.Location = new System.Drawing.Point(442, 123);
+            this.txtURL.Name = "txtURL";
+            this.txtURL.Size = new System.Drawing.Size(100, 20);
+            this.txtURL.TabIndex = 8;
+            this.txtURL.Text = "http://musteritestws.isisbilisim.com.tr/Services/einvoice/ReportInvoiceList.svc";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -447,7 +510,7 @@
             this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Form1";
-            this.Text = "Easy WebService Test Tool";
+            this.Text = "ISIS WebService Test Tool";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -460,6 +523,8 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -501,6 +566,11 @@
         private System.Windows.Forms.Button btnPostbox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtReceiversVKN;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtURL;
     }
 }
 

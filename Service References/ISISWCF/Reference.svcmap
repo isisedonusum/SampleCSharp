@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="17b7b3c4-0ac1-4455-ab87-f6cf10d9c626" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://musteritestws.isisbilisim.com.tr/Services/einvoice/ReportInvoiceList.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ReportInvoiceList.xsd" MetadataType="Schema" ID="2ccedd78-5062-4d08-b1e7-dbb6d2d66320" SourceId="1" SourceUrl="http://musteritestws.isisbilisim.com.tr/Services/einvoice/ReportInvoiceList.svc?xsd=xsd6" />
+    <MetadataFile FileName="ReportInvoiceList1.xsd" MetadataType="Schema" ID="43303bf9-6c7b-4db1-9819-d7db957ccf7f" SourceId="1" SourceUrl="http://musteritestws.isisbilisim.com.tr/Services/einvoice/ReportInvoiceList.svc?xsd=xsd2" />
+    <MetadataFile FileName="ReportInvoiceList2.xsd" MetadataType="Schema" ID="acdd9ba4-1119-47ae-a5b4-0cbd92487a33" SourceId="1" SourceUrl="http://musteritestws.isisbilisim.com.tr/Services/einvoice/ReportInvoiceList.svc?xsd=xsd5" />
+    <MetadataFile FileName="ReportInvoiceList.wsdl" MetadataType="Wsdl" ID="744e5a99-696f-4386-a902-ad992a58905f" SourceId="1" SourceUrl="http://musteritestws.isisbilisim.com.tr/Services/einvoice/ReportInvoiceList.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="ReportInvoiceList3.xsd" MetadataType="Schema" ID="2ef0581c-6c48-444f-9684-8d49c1fedc12" SourceId="1" SourceUrl="http://musteritestws.isisbilisim.com.tr/Services/einvoice/ReportInvoiceList.svc?xsd=xsd1" />
+    <MetadataFile FileName="ReportInvoiceList4.xsd" MetadataType="Schema" ID="eccf72e8-f53c-4ed2-acde-d8913dfcdc39" SourceId="1" SourceUrl="http://musteritestws.isisbilisim.com.tr/Services/einvoice/ReportInvoiceList.svc?xsd=xsd4" />
+    <MetadataFile FileName="ReportInvoiceList5.xsd" MetadataType="Schema" ID="da0e2853-caa6-4872-9703-b99220643c62" SourceId="1" SourceUrl="http://musteritestws.isisbilisim.com.tr/Services/einvoice/ReportInvoiceList.svc?xsd=xsd3" />
+    <MetadataFile FileName="ReportInvoiceList.disco" MetadataType="Disco" ID="404a6dbc-b629-4cb2-b40e-36f886037428" SourceId="1" SourceUrl="http://musteritestws.isisbilisim.com.tr/Services/einvoice/ReportInvoiceList.svc?disco" />
+    <MetadataFile FileName="ReportInvoiceList1.wsdl" MetadataType="Wsdl" ID="cbdf26b8-2468-4838-9d82-965f4209925e" SourceId="1" SourceUrl="http://musteritestws.isisbilisim.com.tr/Services/einvoice/ReportInvoiceList.svc?wsdl" />
+    <MetadataFile FileName="ReportInvoiceList6.xsd" MetadataType="Schema" ID="046fd450-f205-4821-b3f1-986fc38b7907" SourceId="1" SourceUrl="http://musteritestws.isisbilisim.com.tr/Services/einvoice/ReportInvoiceList.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

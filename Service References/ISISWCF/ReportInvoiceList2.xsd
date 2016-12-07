@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://isisbilisim.com.tr/enums/core" elementFormDefault="qualified" targetNamespace="http://isisbilisim.com.tr/enums/core" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="GlobalEnum.OrderByType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ASC" />
+      <xs:enumeration value="DESC" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GlobalEnum.OrderByType" nillable="true" type="tns:GlobalEnum.OrderByType" />
+</xs:schema>

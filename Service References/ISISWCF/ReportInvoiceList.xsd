@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ISIS.Einvoice.Framework.Data" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ISIS.Einvoice.Framework.Data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfOutboxInvoiceHeader">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OutboxInvoiceHeader" nillable="true" type="tns:OutboxInvoiceHeader" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOutboxInvoiceHeader" nillable="true" type="tns:ArrayOfOutboxInvoiceHeader" />
+  <xs:complexType name="OutboxInvoiceHeader">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllowanceCharge_Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AllowanceTotalAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ApprovalHieararcyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Code" type="xs:int" />
+      <xs:element minOccurs="0" name="CompanyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConnectionSettingCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CopyIndicator" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CustomizationID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DespatchDocumentReference_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DespatchDocumentReference_IssueDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DocumentCurrencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InstanceIdentifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InvoiceTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IssueDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="IssueTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JobPositionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineCountNumeric" type="xs:int" />
+      <xs:element minOccurs="0" name="LineExtensionAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Note1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Note2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Note3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Note4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Note5" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderReference_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderReference_IssueDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="PayableAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ProfileID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Receiver_CityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Receiver_Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Receiver_Country_Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Receiver_ElectronicMail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Receiver_PartyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Receiver_PostalZone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Receiver_TaxScheme" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Receiver_Telephone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Receiver_VKN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Receiver_WebsiteURI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecordDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ReferenceDocumentTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusProcessID" type="xs:int" />
+      <xs:element minOccurs="0" name="Supplier_CityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Supplier_Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Supplier_Country_Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Supplier_ElectronicMail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Supplier_PartyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Supplier_PostalZone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Supplier_TaxScheme" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Supplier_Telephone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Supplier_VKN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Supplier_WebsiteURI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaxExclusiveAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TaxInclusiveAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TaxTotal_TaxAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UBLVersionID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UUID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OutboxInvoiceHeader" nillable="true" type="tns:OutboxInvoiceHeader" />
+  <xs:complexType name="ArrayOfInboxInvoiceHeader">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InboxInvoiceHeader" nillable="true" type="tns:InboxInvoiceHeader" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInboxInvoiceHeader" nillable="true" type="tns:ArrayOfInboxInvoiceHeader" />
+  <xs:complexType name="InboxInvoiceHeader">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllowanceCharge_Amount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="AllowanceTotalAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ApprovalHierarchyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Code" type="xs:int" />
+      <xs:element minOccurs="0" name="CommercialDateTime" nillable="true" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="CommercialEnvelopeUUID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommercialResponse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CommercialResponseUUID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CompanyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConnectionSettingCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CopyIndicator" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CustomizationID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DespatchDocumentReference_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DespatchDocumentReference_IssueDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DocumentCurrencyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DocumentNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ERPInvoiceType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ETTN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InstanceIdentifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="InvoiceTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsApproved" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IssueDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="IssueTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JobPositionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LineCountNumeric" type="xs:int" />
+      <xs:element minOccurs="0" name="LineExtensionAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Note1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Note2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Note3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Note4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Note5" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderReference_ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderReference_IssueDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="PayableAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ProfileID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReceiverAlias" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Receiver_CityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Receiver_Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Receiver_Country_Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Receiver_ElectronicMail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Receiver_PartyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Receiver_PostalZone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Receiver_TaxScheme" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Receiver_Telephone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Receiver_VKN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Receiver_WebsiteURI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RecordDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ReferenceDocumentTypeCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReturnInvoiceID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SenderAlias" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusProcessID" type="xs:int" />
+      <xs:element minOccurs="0" name="Supplier_CityName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Supplier_Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Supplier_Country_Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Supplier_ElectronicMail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Supplier_PartyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Supplier_PostalZone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Supplier_TaxScheme" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Supplier_Telephone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Supplier_VKN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Supplier_WebsiteURI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaxExclusiveAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TaxInclusiveAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TaxTotal_TaxAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UBLVersionID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UUID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UpdatedAt" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InboxInvoiceHeader" nillable="true" type="tns:InboxInvoiceHeader" />
+</xs:schema>
