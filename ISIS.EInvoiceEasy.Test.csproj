@@ -107,7 +107,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Service References\ISISWCF\Reference.cs">
+    <Compile Include="Service References\ReportInvoiceList\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ReportGetInvoice\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -155,33 +160,40 @@
     <None Include="Service References\EASY\ISIS.EInvoiceEasy.Test.EASY.ContractsResponseType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ISISWCF\ISIS.EInvoiceEasy.Test.ISISWCF.InboxInvoiceHeader.datasource">
+    <None Include="Service References\ReportInvoiceList\ISIS.EInvoiceEasy.Test.ReportInvoiceList.InboxInvoiceHeader.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ISISWCF\ISIS.EInvoiceEasy.Test.ISISWCF.OutboxInvoiceHeader.datasource">
+    <None Include="Service References\ReportInvoiceList\ISIS.EInvoiceEasy.Test.ReportInvoiceList.OutboxInvoiceHeader.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\ISISWCF\ReportInvoiceList.wsdl" />
-    <None Include="Service References\ISISWCF\ReportInvoiceList.xsd">
+    <None Include="Service References\ReportInvoiceList\ReportInvoiceList.wsdl" />
+    <None Include="Service References\ReportInvoiceList\ReportInvoiceList.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ISISWCF\ReportInvoiceList1.wsdl" />
-    <None Include="Service References\ISISWCF\ReportInvoiceList1.xsd">
+    <None Include="Service References\ReportInvoiceList\ReportInvoiceList1.wsdl" />
+    <None Include="Service References\ReportInvoiceList\ReportInvoiceList1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ISISWCF\ReportInvoiceList2.xsd">
+    <None Include="Service References\ReportInvoiceList\ReportInvoiceList2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ISISWCF\ReportInvoiceList3.xsd">
+    <None Include="Service References\ReportInvoiceList\ReportInvoiceList3.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ISISWCF\ReportInvoiceList4.xsd">
+    <None Include="Service References\ReportInvoiceList\ReportInvoiceList4.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ISISWCF\ReportInvoiceList5.xsd">
+    <None Include="Service References\ReportInvoiceList\ReportInvoiceList5.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\ISISWCF\ReportInvoiceList6.xsd">
+    <None Include="Service References\ReportInvoiceList\ReportInvoiceList6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReportGetInvoice\ReportGetInvoice.wsdl" />
+    <None Include="Service References\ReportGetInvoice\ReportGetInvoice.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ReportGetInvoice\ReportGetInvoice1.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
@@ -212,7 +224,8 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\EASY\" />
-    <WCFMetadataStorage Include="Service References\ISISWCF\" />
+    <WCFMetadataStorage Include="Service References\ReportInvoiceList\" />
+    <WCFMetadataStorage Include="Service References\ReportGetInvoice\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\EASY\EInvoiceEasy.disco" />
@@ -230,16 +243,28 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ISISWCF\ReportInvoiceList.disco" />
+    <None Include="Service References\ReportInvoiceList\ReportInvoiceList.disco" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ISISWCF\configuration91.svcinfo" />
+    <None Include="Service References\ReportInvoiceList\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ISISWCF\configuration.svcinfo" />
+    <None Include="Service References\ReportInvoiceList\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\ISISWCF\Reference.svcmap">
+    <None Include="Service References\ReportInvoiceList\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReportGetInvoice\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReportGetInvoice\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReportGetInvoice\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

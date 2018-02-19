@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8eea60b0-beae-45ac-ab4d-10fa005fb33f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://musteritestws.isisbilisim.com.tr/services/ReportGetInvoice.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ReportGetInvoice.wsdl" MetadataType="Wsdl" ID="728afaeb-2b03-46e1-9c38-d5cbdf90573c" SourceId="1" SourceUrl="http://musteritestws.isisbilisim.com.tr/services/ReportGetInvoice.svc?wsdl" />
+    <MetadataFile FileName="ReportGetInvoice.xsd" MetadataType="Schema" ID="44c202d7-8006-41fb-a9b3-96e2ea091899" SourceId="1" SourceUrl="http://musteritestws.isisbilisim.com.tr/services/ReportGetInvoice.svc?xsd=xsd1" />
+    <MetadataFile FileName="ReportGetInvoice1.xsd" MetadataType="Schema" ID="37e2b6ee-1cb0-47ab-94fa-9209c8197954" SourceId="1" SourceUrl="http://musteritestws.isisbilisim.com.tr/services/ReportGetInvoice.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.ServiceModel;
@@ -255,60 +256,129 @@ namespace ISIS.EInvoiceEasy.Test
         private void button1_Click(object sender, EventArgs e)
         {
             textBox1.Clear();
-            EndpointAddress ea = new EndpointAddress(new Uri(txtURL.Text));
-            CustomBinding cb = new CustomBinding();
-            
-            TextMessageEncodingBindingElement textMessageEncoding = new TextMessageEncodingBindingElement()
-            {
-                MessageVersion = MessageVersion.Soap11
-            };
-            cb.Elements.Add(textMessageEncoding);
+			var result = GetOutboundInvoiceList();
+			textBox1.Text = String.Format("{0} adet fatura bulundu.\r\n", result.Count);
+			foreach (var invoice in result)
+			{
+				textBox1.Text += String.Format("{0}\r\n", invoice.ID);
+			}
+			btnDownloadAllUblTr.Enabled = true;
+		}
 
-            //HTTPS kontrolü
-            HttpTransportBindingElement transport = null;
-            if (txtURL.Text.Length > 5 && txtURL.Text.Substring(0, 5).ToLower() == "https")
-                transport = new HttpsTransportBindingElement();
-            else
-                transport = new HttpTransportBindingElement();
+		private List<ReportInvoiceList.OutboxInvoiceHeader> GetOutboundInvoiceList()
+		{
+			EndpointAddress ea = new EndpointAddress(new Uri(txtURL.Text));
+			CustomBinding cb = new CustomBinding();
 
-            transport.UseDefaultWebProxy = true;
-            transport.BypassProxyOnLocal = true;
+			TextMessageEncodingBindingElement textMessageEncoding = new TextMessageEncodingBindingElement()
+			{
+				MessageVersion = MessageVersion.Soap11
+			};
+			cb.Elements.Add(textMessageEncoding);
 
-            if (!String.IsNullOrEmpty(txtPassword.Text))
-                transport.AuthenticationScheme = AuthenticationSchemes.Basic;
+			//HTTPS kontrolü
+			HttpTransportBindingElement transport = null;
+			if (txtURL.Text.Length > 5 && txtURL.Text.Substring(0, 5).ToLower() == "https")
+				transport = new HttpsTransportBindingElement();
+			else
+				transport = new HttpTransportBindingElement();
 
-            transport.MaxReceivedMessageSize = int.MaxValue;
+			transport.UseDefaultWebProxy = true;
+			transport.BypassProxyOnLocal = true;
 
-            cb.Elements.Add(transport);
+			if (!String.IsNullOrEmpty(txtPassword.Text))
+				transport.AuthenticationScheme = AuthenticationSchemes.Basic;
 
-            ISISWCF.ReportInvoiceListClient client = new ISISWCF.ReportInvoiceListClient(cb, ea);
-            if (!String.IsNullOrEmpty(txtPassword.Text))
-            {
-                client.ClientCredentials.UserName.UserName = txtUserName.Text;
-                client.ClientCredentials.UserName.Password = txtPassword.Text;
-            }
+			transport.MaxReceivedMessageSize = int.MaxValue;
 
-            var request = new ISISWCF.ContractsOutboundInvoiceListRequest();
-            request.VKN = txtVKN.Text;
-            request.RecordCount = 100;
-            request.BeginRecordDateTime = DateTime.Now.AddDays(-30);
-            request.EndRecordDateTime = DateTime.Now;
+			cb.Elements.Add(transport);
 
-            // This wrapper is required for each call
-            using (OperationContextScope scope = new OperationContextScope(client.InnerChannel))
-            {
-                var httpRequestProperty = new HttpRequestMessageProperty();
-                httpRequestProperty.Headers[System.Net.HttpRequestHeader.Authorization] = "Basic " +
-                Convert.ToBase64String(Encoding.ASCII.GetBytes(client.ClientCredentials.UserName.UserName + ":" + client.ClientCredentials.UserName.Password));
-                OperationContext.Current.OutgoingMessageProperties[HttpRequestMessageProperty.Name] = httpRequestProperty;
+			ReportInvoiceList.ReportInvoiceListClient client = new ReportInvoiceList.ReportInvoiceListClient(cb, ea);
+			if (!String.IsNullOrEmpty(txtPassword.Text))
+			{
+				client.ClientCredentials.UserName.UserName = txtUserName.Text;
+				client.ClientCredentials.UserName.Password = txtPassword.Text;
+			}
 
-                var result = client.OutboundInvoiceListByFilter(request);
-                textBox1.Text = String.Format("{0} adet fatura bulundu.\r\n", result.Count);
-                foreach (var invoice in result)
-                {
-                    textBox1.Text += String.Format("{0}\r\n", invoice.ID);
-                }
-            }
-        }
-    }
+			var request = new ReportInvoiceList.ContractsOutboundInvoiceListRequest();
+			request.VKN = txtVKN.Text;
+			request.RecordCount = 100;
+			request.BeginRecordDateTime = DateTime.Now.AddDays(-30);
+			request.EndRecordDateTime = DateTime.Now;
+
+			// This wrapper is required for each call
+			using (OperationContextScope scope = new OperationContextScope(client.InnerChannel))
+			{
+				var httpRequestProperty = new HttpRequestMessageProperty();
+				httpRequestProperty.Headers[System.Net.HttpRequestHeader.Authorization] = "Basic " +
+				Convert.ToBase64String(Encoding.ASCII.GetBytes(client.ClientCredentials.UserName.UserName + ":" + client.ClientCredentials.UserName.Password));
+				OperationContext.Current.OutgoingMessageProperties[HttpRequestMessageProperty.Name] = httpRequestProperty;
+
+				return client.OutboundInvoiceListByFilter(request);
+			}
+		}
+
+		private void btnDownloadAllUblTr_Click(object sender, EventArgs e)
+		{
+			var result = GetOutboundInvoiceList();
+			foreach(var invoice in result)
+			{
+				File.WriteAllBytes(Path.Combine(Path.GetTempPath(), invoice.UUID + ".xml"), GetOutboundInvoiceUblTr(txtVKN.Text, invoice.UUID));
+			}
+			textBox1.Text += String.Format("\r\nDosyalar {0} klasörüne kaydedildi", Path.GetTempPath());
+		}
+
+		private byte[] GetOutboundInvoiceUblTr(string VKN, string UUID)
+		{
+			EndpointAddress ea = new EndpointAddress(new Uri(txtReportGetInvoiceUrl.Text));
+			CustomBinding cb = new CustomBinding();
+
+			TextMessageEncodingBindingElement textMessageEncoding = new TextMessageEncodingBindingElement()
+			{
+				MessageVersion = MessageVersion.Soap11
+			};
+			cb.Elements.Add(textMessageEncoding);
+
+			//HTTPS kontrolü
+			HttpTransportBindingElement transport = null;
+			if (txtReportGetInvoiceUrl.Text.Length > 5 && txtReportGetInvoiceUrl.Text.Substring(0, 5).ToLower() == "https")
+				transport = new HttpsTransportBindingElement();
+			else
+				transport = new HttpTransportBindingElement();
+
+			transport.UseDefaultWebProxy = true;
+			transport.BypassProxyOnLocal = true;
+
+			if (!String.IsNullOrEmpty(txtPassword.Text))
+				transport.AuthenticationScheme = AuthenticationSchemes.Basic;
+
+			transport.MaxReceivedMessageSize = int.MaxValue;
+
+			cb.Elements.Add(transport);
+
+			ReportGetInvoice.ReportGetInvoiceClient client = new ReportGetInvoice.ReportGetInvoiceClient(cb, ea);
+			if (!String.IsNullOrEmpty(txtPassword.Text))
+			{
+				client.ClientCredentials.UserName.UserName = txtUserName.Text;
+				client.ClientCredentials.UserName.Password = txtPassword.Text;
+			}
+
+			var request = new ReportInvoiceList.ContractsOutboundInvoiceListRequest();
+			request.VKN = txtVKN.Text;
+			request.RecordCount = 100;
+			request.BeginRecordDateTime = DateTime.Now.AddDays(-30);
+			request.EndRecordDateTime = DateTime.Now;
+
+			// This wrapper is required for each call
+			using (OperationContextScope scope = new OperationContextScope(client.InnerChannel))
+			{
+				var httpRequestProperty = new HttpRequestMessageProperty();
+				httpRequestProperty.Headers[System.Net.HttpRequestHeader.Authorization] = "Basic " +
+				Convert.ToBase64String(Encoding.ASCII.GetBytes(client.ClientCredentials.UserName.UserName + ":" + client.ClientCredentials.UserName.Password));
+				OperationContext.Current.OutgoingMessageProperties[HttpRequestMessageProperty.Name] = httpRequestProperty;
+
+				return client.GetOutboundInvoiceAsUblTr(VKN, null, null, null, UUID);
+			}
+		}
+	}
 }

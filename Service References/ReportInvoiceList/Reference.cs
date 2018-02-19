@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ISIS.EInvoiceEasy.Test.ISISWCF {
+namespace ISIS.EInvoiceEasy.Test.ReportInvoiceList {
     using System.Runtime.Serialization;
     using System;
     
@@ -17,8 +17,8 @@ namespace ISIS.EInvoiceEasy.Test.ISISWCF {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Contracts.ReportInvoiceListRequest", Namespace="http://isisbilisim.com.tr/services/einvoice")]
     [System.SerializableAttribute()]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ISIS.EInvoiceEasy.Test.ISISWCF.ContractsInboundInvoiceListRequest))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ISIS.EInvoiceEasy.Test.ISISWCF.ContractsOutboundInvoiceListRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ISIS.EInvoiceEasy.Test.ReportInvoiceList.ContractsInboundInvoiceListRequest))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(ISIS.EInvoiceEasy.Test.ReportInvoiceList.ContractsOutboundInvoiceListRequest))]
     public partial class ContractsReportInvoiceListRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -44,22 +44,22 @@ namespace ISIS.EInvoiceEasy.Test.ISISWCF {
         private System.Nullable<System.DateTime> EndUpdateDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<ISIS.EInvoiceEasy.Test.ISISWCF.Extension> ExcludedExtensionsField;
+        private System.Collections.Generic.List<ISIS.EInvoiceEasy.Test.ReportInvoiceList.Extension> ExcludedExtensionsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Collections.Generic.List<string> IDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Collections.Generic.List<ISIS.EInvoiceEasy.Test.ISISWCF.Extension> IncludedExtensionsField;
+        private System.Collections.Generic.List<ISIS.EInvoiceEasy.Test.ReportInvoiceList.Extension> IncludedExtensionsField;
         
-        private ISIS.EInvoiceEasy.Test.ISISWCF.GlobalEnumBool IsReadedField;
+        private ISIS.EInvoiceEasy.Test.ReportInvoiceList.GlobalEnumBool IsReadedField;
         
-        private ISIS.EInvoiceEasy.Test.ISISWCF.GlobalEnumBool IsUblDownLoadedField;
+        private ISIS.EInvoiceEasy.Test.ReportInvoiceList.GlobalEnumBool IsUblDownLoadedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ISIS.EInvoiceEasy.Test.ISISWCF.GlobalEnumOrderByType OrderByField;
+        private ISIS.EInvoiceEasy.Test.ReportInvoiceList.GlobalEnumOrderByType OrderByField;
         
-        private ISIS.EInvoiceEasy.Test.ISISWCF.EnumsInvoiceType ProfileField;
+        private ISIS.EInvoiceEasy.Test.ReportInvoiceList.EnumsInvoiceType ProfileField;
         
         private int RecordCountField;
         
@@ -167,7 +167,7 @@ namespace ISIS.EInvoiceEasy.Test.ISISWCF {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<ISIS.EInvoiceEasy.Test.ISISWCF.Extension> ExcludedExtensions {
+        public System.Collections.Generic.List<ISIS.EInvoiceEasy.Test.ReportInvoiceList.Extension> ExcludedExtensions {
             get {
                 return this.ExcludedExtensionsField;
             }
@@ -193,7 +193,7 @@ namespace ISIS.EInvoiceEasy.Test.ISISWCF {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Collections.Generic.List<ISIS.EInvoiceEasy.Test.ISISWCF.Extension> IncludedExtensions {
+        public System.Collections.Generic.List<ISIS.EInvoiceEasy.Test.ReportInvoiceList.Extension> IncludedExtensions {
             get {
                 return this.IncludedExtensionsField;
             }
@@ -206,7 +206,7 @@ namespace ISIS.EInvoiceEasy.Test.ISISWCF {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public ISIS.EInvoiceEasy.Test.ISISWCF.GlobalEnumBool IsReaded {
+        public ISIS.EInvoiceEasy.Test.ReportInvoiceList.GlobalEnumBool IsReaded {
             get {
                 return this.IsReadedField;
             }
@@ -219,7 +219,7 @@ namespace ISIS.EInvoiceEasy.Test.ISISWCF {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public ISIS.EInvoiceEasy.Test.ISISWCF.GlobalEnumBool IsUblDownLoaded {
+        public ISIS.EInvoiceEasy.Test.ReportInvoiceList.GlobalEnumBool IsUblDownLoaded {
             get {
                 return this.IsUblDownLoadedField;
             }
@@ -232,7 +232,7 @@ namespace ISIS.EInvoiceEasy.Test.ISISWCF {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public ISIS.EInvoiceEasy.Test.ISISWCF.GlobalEnumOrderByType OrderBy {
+        public ISIS.EInvoiceEasy.Test.ReportInvoiceList.GlobalEnumOrderByType OrderBy {
             get {
                 return this.OrderByField;
             }
@@ -245,7 +245,7 @@ namespace ISIS.EInvoiceEasy.Test.ISISWCF {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public ISIS.EInvoiceEasy.Test.ISISWCF.EnumsInvoiceType Profile {
+        public ISIS.EInvoiceEasy.Test.ReportInvoiceList.EnumsInvoiceType Profile {
             get {
                 return this.ProfileField;
             }
@@ -297,19 +297,19 @@ namespace ISIS.EInvoiceEasy.Test.ISISWCF {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Contracts.InboundInvoiceListRequest", Namespace="http://isisbilisim.com.tr/services/einvoice")]
     [System.SerializableAttribute()]
-    public partial class ContractsInboundInvoiceListRequest : ISIS.EInvoiceEasy.Test.ISISWCF.ContractsReportInvoiceListRequest {
+    public partial class ContractsInboundInvoiceListRequest : ISIS.EInvoiceEasy.Test.ReportInvoiceList.ContractsReportInvoiceListRequest {
         
-        private ISIS.EInvoiceEasy.Test.ISISWCF.GlobalEnumBool IsIsisTrDownLoadedField;
+        private ISIS.EInvoiceEasy.Test.ReportInvoiceList.GlobalEnumBool IsIsisTrDownLoadedField;
         
-        private ISIS.EInvoiceEasy.Test.ISISWCF.GlobalEnumBool IsProcessedField;
+        private ISIS.EInvoiceEasy.Test.ReportInvoiceList.GlobalEnumBool IsProcessedField;
         
-        private ISIS.EInvoiceEasy.Test.ISISWCF.EnumsInboundStatus StatusField;
+        private ISIS.EInvoiceEasy.Test.ReportInvoiceList.EnumsInboundStatus StatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Collections.Generic.List<string> UUIDListField;
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public ISIS.EInvoiceEasy.Test.ISISWCF.GlobalEnumBool IsIsisTrDownLoaded {
+        public ISIS.EInvoiceEasy.Test.ReportInvoiceList.GlobalEnumBool IsIsisTrDownLoaded {
             get {
                 return this.IsIsisTrDownLoadedField;
             }
@@ -322,7 +322,7 @@ namespace ISIS.EInvoiceEasy.Test.ISISWCF {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public ISIS.EInvoiceEasy.Test.ISISWCF.GlobalEnumBool IsProcessed {
+        public ISIS.EInvoiceEasy.Test.ReportInvoiceList.GlobalEnumBool IsProcessed {
             get {
                 return this.IsProcessedField;
             }
@@ -335,7 +335,7 @@ namespace ISIS.EInvoiceEasy.Test.ISISWCF {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public ISIS.EInvoiceEasy.Test.ISISWCF.EnumsInboundStatus Status {
+        public ISIS.EInvoiceEasy.Test.ReportInvoiceList.EnumsInboundStatus Status {
             get {
                 return this.StatusField;
             }
@@ -365,15 +365,15 @@ namespace ISIS.EInvoiceEasy.Test.ISISWCF {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Contracts.OutboundInvoiceListRequest", Namespace="http://isisbilisim.com.tr/services/einvoice")]
     [System.SerializableAttribute()]
-    public partial class ContractsOutboundInvoiceListRequest : ISIS.EInvoiceEasy.Test.ISISWCF.ContractsReportInvoiceListRequest {
+    public partial class ContractsOutboundInvoiceListRequest : ISIS.EInvoiceEasy.Test.ReportInvoiceList.ContractsReportInvoiceListRequest {
         
-        private ISIS.EInvoiceEasy.Test.ISISWCF.EnumsOutboundStatus StatusField;
+        private ISIS.EInvoiceEasy.Test.ReportInvoiceList.EnumsOutboundStatus StatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Collections.Generic.List<string> UUIDListField;
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public ISIS.EInvoiceEasy.Test.ISISWCF.EnumsOutboundStatus Status {
+        public ISIS.EInvoiceEasy.Test.ReportInvoiceList.EnumsOutboundStatus Status {
             get {
                 return this.StatusField;
             }
@@ -2724,13 +2724,13 @@ namespace ISIS.EInvoiceEasy.Test.ISISWCF {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://isisbilisim.com.tr/services/einvoice", ConfigurationName="ISISWCF.IReportInvoiceList")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://isisbilisim.com.tr/services/einvoice", ConfigurationName="ReportInvoiceList.IReportInvoiceList")]
     public interface IReportInvoiceList {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://isisbilisim.com.tr/services/einvoice/IReportInvoiceList/OutboundInvoiceLis" +
             "tByFilter", ReplyAction="http://isisbilisim.com.tr/services/einvoice/IReportInvoiceList/OutboundInvoiceLis" +
             "tByFilterResponse")]
-        System.Collections.Generic.List<ISIS.EInvoiceEasy.Test.ISISWCF.OutboxInvoiceHeader> OutboundInvoiceListByFilter(ISIS.EInvoiceEasy.Test.ISISWCF.ContractsOutboundInvoiceListRequest request);
+        System.Collections.Generic.List<ISIS.EInvoiceEasy.Test.ReportInvoiceList.OutboxInvoiceHeader> OutboundInvoiceListByFilter(ISIS.EInvoiceEasy.Test.ReportInvoiceList.ContractsOutboundInvoiceListRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://isisbilisim.com.tr/services/einvoice/IReportInvoiceList/SetOutboundInvoice" +
             "AsUblDownload", ReplyAction="http://isisbilisim.com.tr/services/einvoice/IReportInvoiceList/SetOutboundInvoice" +
@@ -2745,7 +2745,7 @@ namespace ISIS.EInvoiceEasy.Test.ISISWCF {
         [System.ServiceModel.OperationContractAttribute(Action="http://isisbilisim.com.tr/services/einvoice/IReportInvoiceList/InboundInvoiceList" +
             "ByFilter", ReplyAction="http://isisbilisim.com.tr/services/einvoice/IReportInvoiceList/InboundInvoiceList" +
             "ByFilterResponse")]
-        System.Collections.Generic.List<ISIS.EInvoiceEasy.Test.ISISWCF.InboxInvoiceHeader> InboundInvoiceListByFilter(ISIS.EInvoiceEasy.Test.ISISWCF.ContractsInboundInvoiceListRequest request);
+        System.Collections.Generic.List<ISIS.EInvoiceEasy.Test.ReportInvoiceList.InboxInvoiceHeader> InboundInvoiceListByFilter(ISIS.EInvoiceEasy.Test.ReportInvoiceList.ContractsInboundInvoiceListRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://isisbilisim.com.tr/services/einvoice/IReportInvoiceList/SetInboundInvoiceA" +
             "sIsisTrDownload", ReplyAction="http://isisbilisim.com.tr/services/einvoice/IReportInvoiceList/SetInboundInvoiceA" +
@@ -2764,12 +2764,12 @@ namespace ISIS.EInvoiceEasy.Test.ISISWCF {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IReportInvoiceListChannel : ISIS.EInvoiceEasy.Test.ISISWCF.IReportInvoiceList, System.ServiceModel.IClientChannel {
+    public interface IReportInvoiceListChannel : ISIS.EInvoiceEasy.Test.ReportInvoiceList.IReportInvoiceList, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ReportInvoiceListClient : System.ServiceModel.ClientBase<ISIS.EInvoiceEasy.Test.ISISWCF.IReportInvoiceList>, ISIS.EInvoiceEasy.Test.ISISWCF.IReportInvoiceList {
+    public partial class ReportInvoiceListClient : System.ServiceModel.ClientBase<ISIS.EInvoiceEasy.Test.ReportInvoiceList.IReportInvoiceList>, ISIS.EInvoiceEasy.Test.ReportInvoiceList.IReportInvoiceList {
         
         public ReportInvoiceListClient() {
         }
@@ -2790,7 +2790,7 @@ namespace ISIS.EInvoiceEasy.Test.ISISWCF {
                 base(binding, remoteAddress) {
         }
         
-        public System.Collections.Generic.List<ISIS.EInvoiceEasy.Test.ISISWCF.OutboxInvoiceHeader> OutboundInvoiceListByFilter(ISIS.EInvoiceEasy.Test.ISISWCF.ContractsOutboundInvoiceListRequest request) {
+        public System.Collections.Generic.List<ISIS.EInvoiceEasy.Test.ReportInvoiceList.OutboxInvoiceHeader> OutboundInvoiceListByFilter(ISIS.EInvoiceEasy.Test.ReportInvoiceList.ContractsOutboundInvoiceListRequest request) {
             return base.Channel.OutboundInvoiceListByFilter(request);
         }
         
@@ -2802,7 +2802,7 @@ namespace ISIS.EInvoiceEasy.Test.ISISWCF {
             return base.Channel.SetOutboundInvoiceAsReaded(VKN, UUID);
         }
         
-        public System.Collections.Generic.List<ISIS.EInvoiceEasy.Test.ISISWCF.InboxInvoiceHeader> InboundInvoiceListByFilter(ISIS.EInvoiceEasy.Test.ISISWCF.ContractsInboundInvoiceListRequest request) {
+        public System.Collections.Generic.List<ISIS.EInvoiceEasy.Test.ReportInvoiceList.InboxInvoiceHeader> InboundInvoiceListByFilter(ISIS.EInvoiceEasy.Test.ReportInvoiceList.ContractsInboundInvoiceListRequest request) {
             return base.Channel.InboundInvoiceListByFilter(request);
         }
         

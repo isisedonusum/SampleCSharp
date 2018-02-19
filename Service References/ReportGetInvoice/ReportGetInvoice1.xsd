@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="GetOutboundUuidByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VKN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOutboundUuidByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetOutboundUuidByIDResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOutboundInvoiceAsUblTr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VKN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DocumentReferenceNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ModulCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UUID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOutboundInvoiceAsUblTrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetOutboundInvoiceAsUblTrResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOutboundInvoiceAsUblTrByModuleAndReference">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VKN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DocumentReferenceNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ModulCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOutboundInvoiceAsUblTrByModuleAndReferenceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetOutboundInvoiceAsUblTrByModuleAndReferenceResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOutboundInvoiceAsUblTrByUUID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VKN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UUID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOutboundInvoiceAsUblTrByUUIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetOutboundInvoiceAsUblTrByUUIDResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOutboundInvoiceAsUblTrByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VKN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOutboundInvoiceAsUblTrByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetOutboundInvoiceAsUblTrByIDResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInboundUuidByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VKN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SupplierVKN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInboundUuidByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetInboundUuidByIDResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInboundUblInvoice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VKN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="DocumentReferenceNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ModulCode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInboundUblInvoiceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetInboundUblInvoiceResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInboundInvoiceAsUblTrByUUID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VKN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UUID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInboundInvoiceAsUblTrByUUIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetInboundInvoiceAsUblTrByUUIDResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInboundInvoiceAsUblTrByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VKN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="SupplierVKN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInboundInvoiceAsUblTrByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetInboundInvoiceAsUblTrByIDResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InboundInvoiceAsIsisTr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VKN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UUID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InboundInvoiceAsIsisTrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InboundInvoiceAsIsisTrResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
