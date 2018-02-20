@@ -53,7 +53,7 @@ namespace ISIS.EInvoiceEasy.Test
         private void btnGetSingleInvoice_Click(object sender, EventArgs e)
         {
             visualReset();
-            var ea = new EndpointAddress("http://erptestep.isisbilisim.com.tr/EInvoiceEasy.svc");
+            var ea = new EndpointAddress(txtEInvoiceEasyUrl.Text);
             var bn = new BasicHttpBinding();
             var EC = new EASY.EasyClient(bn, ea);
             var rsp = new EASY.ContractsResponseType();
@@ -92,7 +92,7 @@ namespace ISIS.EInvoiceEasy.Test
         private void btnGetSingleEnvelope_Click(object sender, EventArgs e)
         {
             visualReset();
-            var ea = new EndpointAddress("http://erptestep.isisbilisim.com.tr/EInvoiceEasy.svc");
+            var ea = new EndpointAddress(txtEInvoiceEasyUrl.Text);
             var bn = new BasicHttpBinding();
             var EC = new EASY.EasyClient(bn, ea);
             var rsp = new EASY.ContractsResponseType();
@@ -129,7 +129,7 @@ namespace ISIS.EInvoiceEasy.Test
         {
             visualReset();
             splitContainer1.Panel2Collapsed = true;
-            var ea = new EndpointAddress("http://erptestep.isisbilisim.com.tr/EInvoiceEasy.svc");
+            var ea = new EndpointAddress(txtEInvoiceEasyUrl.Text);
             var bn = new BasicHttpBinding();
             var EC = new EASY.EasyClient(bn, ea);
             var rsp = new EASY.ContractsResponseType();
@@ -164,7 +164,7 @@ namespace ISIS.EInvoiceEasy.Test
         {
             visualReset();
             splitContainer1.Panel2Collapsed = true;
-            var ea = new EndpointAddress("http://erptestep.isisbilisim.com.tr/EInvoiceEasy.svc");
+            var ea = new EndpointAddress(txtEInvoiceEasyUrl.Text);
             var bn = new BasicHttpBinding();
             var EC = new EASY.EasyClient(bn, ea);
             var rsp = new EASY.ContractsResponseType();
@@ -193,7 +193,7 @@ namespace ISIS.EInvoiceEasy.Test
         {
             visualReset();
             splitContainer1.Panel2Collapsed = true;
-            var ea = new EndpointAddress("http://erptestep.isisbilisim.com.tr/EInvoiceEasy.svc");
+            var ea = new EndpointAddress(txtEInvoiceEasyUrl.Text);
             var bn = new BasicHttpBinding();
             var EC = new EASY.EasyClient(bn, ea);
             var rsp = new EASY.ContractsResponseType();

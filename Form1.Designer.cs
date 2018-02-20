@@ -30,6 +30,8 @@
         {
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.label11 = new System.Windows.Forms.Label();
+			this.txtReportGetInvoiceUrl = new System.Windows.Forms.TextBox();
 			this.label9 = new System.Windows.Forms.Label();
 			this.txtURL = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
@@ -64,13 +66,13 @@
 			this.btnSendEnvelope = new System.Windows.Forms.Button();
 			this.richOutbound = new System.Windows.Forms.RichTextBox();
 			this.tabPage4 = new System.Windows.Forms.TabPage();
+			this.btnDownloadAllUblTr = new System.Windows.Forms.Button();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.button1 = new System.Windows.Forms.Button();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.richMessage = new System.Windows.Forms.RichTextBox();
-			this.btnDownloadAllUblTr = new System.Windows.Forms.Button();
-			this.txtReportGetInvoiceUrl = new System.Windows.Forms.TextBox();
-			this.label11 = new System.Windows.Forms.Label();
+			this.label13 = new System.Windows.Forms.Label();
+			this.txtEInvoiceEasyUrl = new System.Windows.Forms.TextBox();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.tabPage2.SuspendLayout();
@@ -103,6 +105,8 @@
 			// 
 			// tabPage1
 			// 
+			this.tabPage1.Controls.Add(this.label13);
+			this.tabPage1.Controls.Add(this.txtEInvoiceEasyUrl);
 			this.tabPage1.Controls.Add(this.label11);
 			this.tabPage1.Controls.Add(this.txtReportGetInvoiceUrl);
 			this.tabPage1.Controls.Add(this.label9);
@@ -123,10 +127,27 @@
 			this.tabPage1.Text = "ServiceCredentials";
 			this.tabPage1.UseVisualStyleBackColor = true;
 			// 
+			// label11
+			// 
+			this.label11.AutoSize = true;
+			this.label11.Location = new System.Drawing.Point(320, 126);
+			this.label11.Name = "label11";
+			this.label11.Size = new System.Drawing.Size(116, 13);
+			this.label11.TabIndex = 11;
+			this.label11.Text = "ReportGetInvoice URL";
+			// 
+			// txtReportGetInvoiceUrl
+			// 
+			this.txtReportGetInvoiceUrl.Location = new System.Drawing.Point(442, 123);
+			this.txtReportGetInvoiceUrl.Name = "txtReportGetInvoiceUrl";
+			this.txtReportGetInvoiceUrl.Size = new System.Drawing.Size(332, 20);
+			this.txtReportGetInvoiceUrl.TabIndex = 10;
+			this.txtReportGetInvoiceUrl.Text = "http://musteritestws.isisbilisim.com.tr/services/ReportGetInvoice.svc";
+			// 
 			// label9
 			// 
 			this.label9.AutoSize = true;
-			this.label9.Location = new System.Drawing.Point(321, 126);
+			this.label9.Location = new System.Drawing.Point(321, 100);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(115, 13);
 			this.label9.TabIndex = 9;
@@ -134,9 +155,9 @@
 			// 
 			// txtURL
 			// 
-			this.txtURL.Location = new System.Drawing.Point(442, 123);
+			this.txtURL.Location = new System.Drawing.Point(442, 97);
 			this.txtURL.Name = "txtURL";
-			this.txtURL.Size = new System.Drawing.Size(100, 20);
+			this.txtURL.Size = new System.Drawing.Size(332, 20);
 			this.txtURL.TabIndex = 8;
 			this.txtURL.Text = "http://musteritestws.isisbilisim.com.tr/Services/einvoice/ReportInvoiceList.svc";
 			// 
@@ -462,6 +483,17 @@
 			this.tabPage4.Text = "OutboundInvoiceList";
 			this.tabPage4.UseVisualStyleBackColor = true;
 			// 
+			// btnDownloadAllUblTr
+			// 
+			this.btnDownloadAllUblTr.Enabled = false;
+			this.btnDownloadAllUblTr.Location = new System.Drawing.Point(346, 59);
+			this.btnDownloadAllUblTr.Name = "btnDownloadAllUblTr";
+			this.btnDownloadAllUblTr.Size = new System.Drawing.Size(143, 23);
+			this.btnDownloadAllUblTr.TabIndex = 2;
+			this.btnDownloadAllUblTr.Text = "Download All as UBL-TR";
+			this.btnDownloadAllUblTr.UseVisualStyleBackColor = true;
+			this.btnDownloadAllUblTr.Click += new System.EventHandler(this.btnDownloadAllUblTr_Click);
+			// 
 			// textBox1
 			// 
 			this.textBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -508,33 +540,22 @@
 			this.richMessage.TabIndex = 0;
 			this.richMessage.Text = "";
 			// 
-			// btnDownloadAllUblTr
+			// label13
 			// 
-			this.btnDownloadAllUblTr.Enabled = false;
-			this.btnDownloadAllUblTr.Location = new System.Drawing.Point(346, 59);
-			this.btnDownloadAllUblTr.Name = "btnDownloadAllUblTr";
-			this.btnDownloadAllUblTr.Size = new System.Drawing.Size(143, 23);
-			this.btnDownloadAllUblTr.TabIndex = 2;
-			this.btnDownloadAllUblTr.Text = "Download All as UBL-TR";
-			this.btnDownloadAllUblTr.UseVisualStyleBackColor = true;
-			this.btnDownloadAllUblTr.Click += new System.EventHandler(this.btnDownloadAllUblTr_Click);
+			this.label13.AutoSize = true;
+			this.label13.Location = new System.Drawing.Point(381, 74);
+			this.label13.Name = "label13";
+			this.label13.Size = new System.Drawing.Size(55, 13);
+			this.label13.TabIndex = 13;
+			this.label13.Text = "Easy URL";
 			// 
-			// txtReportGetInvoiceUrl
+			// txtEInvoiceEasyUrl
 			// 
-			this.txtReportGetInvoiceUrl.Location = new System.Drawing.Point(442, 97);
-			this.txtReportGetInvoiceUrl.Name = "txtReportGetInvoiceUrl";
-			this.txtReportGetInvoiceUrl.Size = new System.Drawing.Size(100, 20);
-			this.txtReportGetInvoiceUrl.TabIndex = 10;
-			this.txtReportGetInvoiceUrl.Text = "http://musteritestws.isisbilisim.com.tr/services/ReportGetInvoice.svc";
-			// 
-			// label11
-			// 
-			this.label11.AutoSize = true;
-			this.label11.Location = new System.Drawing.Point(320, 100);
-			this.label11.Name = "label11";
-			this.label11.Size = new System.Drawing.Size(116, 13);
-			this.label11.TabIndex = 11;
-			this.label11.Text = "ReportGetInvoice URL";
+			this.txtEInvoiceEasyUrl.Location = new System.Drawing.Point(442, 71);
+			this.txtEInvoiceEasyUrl.Name = "txtEInvoiceEasyUrl";
+			this.txtEInvoiceEasyUrl.Size = new System.Drawing.Size(332, 20);
+			this.txtEInvoiceEasyUrl.TabIndex = 12;
+			this.txtEInvoiceEasyUrl.Text = "http://erptestep.isisbilisim.com.tr/EInvoiceEasy.svc";
 			// 
 			// Form1
 			// 
@@ -608,6 +629,8 @@
 		private System.Windows.Forms.Button btnDownloadAllUblTr;
 		private System.Windows.Forms.TextBox txtReportGetInvoiceUrl;
 		private System.Windows.Forms.Label label11;
+		private System.Windows.Forms.Label label13;
+		private System.Windows.Forms.TextBox txtEInvoiceEasyUrl;
 	}
 }
 
