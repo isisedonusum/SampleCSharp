@@ -320,11 +320,64 @@ namespace ISIS.EInvoiceEasy.Test
 
 		private void btnDownloadAllUblTr_Click(object sender, EventArgs e)
 		{
+			textBox1.Text = String.Format("{0} Fatura listesi alınıyor", DateTime.Now);
 			var result = GetOutboundInvoiceList();
-			foreach(var invoice in result)
+			textBox1.Text += String.Format("\r\n{0} Fatura listesi alındı", DateTime.Now);
+
+			EndpointAddress ea = new EndpointAddress(new Uri(txtReportGetInvoiceUrl.Text));
+			CustomBinding cb = new CustomBinding();
+
+			TextMessageEncodingBindingElement textMessageEncoding = new TextMessageEncodingBindingElement()
 			{
-				File.WriteAllBytes(Path.Combine(Path.GetTempPath(), invoice.UUID + ".xml"), GetOutboundInvoiceUblTr(txtVKN.Text, invoice.UUID));
+				MessageVersion = MessageVersion.Soap11
+			};
+			cb.Elements.Add(textMessageEncoding);
+
+			//HTTPS kontrolü
+			HttpTransportBindingElement transport = null;
+			if (txtReportGetInvoiceUrl.Text.Length > 5 && txtReportGetInvoiceUrl.Text.Substring(0, 5).ToLower() == "https")
+				transport = new HttpsTransportBindingElement();
+			else
+				transport = new HttpTransportBindingElement();
+
+			transport.UseDefaultWebProxy = true;
+			transport.BypassProxyOnLocal = true;
+
+			if (!String.IsNullOrEmpty(txtPassword.Text))
+				transport.AuthenticationScheme = AuthenticationSchemes.Basic;
+
+			transport.MaxReceivedMessageSize = int.MaxValue;
+
+			cb.Elements.Add(transport);
+
+			ReportGetInvoice.ReportGetInvoiceClient client = new ReportGetInvoice.ReportGetInvoiceClient(cb, ea);
+			if (!String.IsNullOrEmpty(txtPassword.Text))
+			{
+				client.ClientCredentials.UserName.UserName = txtUserName.Text;
+				client.ClientCredentials.UserName.Password = txtPassword.Text;
 			}
+
+			var request = new ReportInvoiceList.ContractsOutboundInvoiceListRequest();
+			request.VKN = txtVKN.Text;
+			request.RecordCount = 100;
+			request.BeginRecordDateTime = DateTime.Now.AddDays(-30);
+			request.EndRecordDateTime = DateTime.Now;
+
+			textBox1.Text += String.Format("\r\n{0} Faturalar indirilmeye başlandı", DateTime.Now);
+			foreach (var invoice in result)
+			{
+				// This wrapper is required for each call
+				using (OperationContextScope scope = new OperationContextScope(client.InnerChannel))
+				{
+					var httpRequestProperty = new HttpRequestMessageProperty();
+					httpRequestProperty.Headers[System.Net.HttpRequestHeader.Authorization] = "Basic " +
+					Convert.ToBase64String(Encoding.ASCII.GetBytes(client.ClientCredentials.UserName.UserName + ":" + client.ClientCredentials.UserName.Password));
+					OperationContext.Current.OutgoingMessageProperties[HttpRequestMessageProperty.Name] = httpRequestProperty;
+					File.WriteAllBytes(Path.Combine(Path.GetTempPath(), invoice.UUID + ".xml"), client.GetOutboundInvoiceAsUblTr(txtVKN.Text, null, null, null, invoice.UUID));
+					textBox1.Text += String.Format("\r\n{0} Fatura {1} indirildi", DateTime.Now, invoice.UUID);
+				}
+			}
+			textBox1.Text += String.Format("\r\n{0} Faturalar indirildi", DateTime.Now);
 			textBox1.Text += String.Format("\r\nDosyalar {0} klasörüne kaydedildi", Path.GetTempPath());
 		}
 
